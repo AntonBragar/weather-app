@@ -1,13 +1,14 @@
 import React from 'react';
+import {FormWrapper} from "./FormStyled";
+
 
 const Form = () => {
     return (
-        <div>
-            <form action="">
-                <input type="text"/>
-                <button>Search</button>
-            </form>
-        </div>
+        <FormWrapper>
+            <button>Location</button>
+            <input type="text"/>
+            <button>Favorite</button>
+        </FormWrapper>
     );
 };
 
