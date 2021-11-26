@@ -4,7 +4,7 @@ export const FormWrapper = styled.div`
 
   input {
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 31px;
     width: 280px;
     height: 48px;
   }
