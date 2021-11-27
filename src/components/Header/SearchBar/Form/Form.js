@@ -1,6 +1,9 @@
 import React from 'react';
 import {FormWrapper} from "./FormStyled";
-
+const hell=()=>{
+    console.log('hell 0')
+    return <p>HEEEEL</p>
+}
 
 const Form = () => {
     return (
@@ -8,6 +11,7 @@ const Form = () => {
             <button>Location</button>
             <input type="text"/>
             <button>Favorite</button>
+            {hell()}
         </FormWrapper>
     );
 };
