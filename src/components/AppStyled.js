@@ -1,9 +1,12 @@
 import styled from "styled-components";
+
 export const AppWrapper = styled.div`
   .container {
     max-width: 480px;
     margin: 0 auto;
     padding: 0 30px;
+    display: flex;
+    justify-content: center;
   }
   @media screen and (min-width: 768px) {
     .container {
