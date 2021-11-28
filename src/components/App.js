@@ -7,7 +7,7 @@ import {AppWrapper} from "./AppStyled";
 
 const App = () => {
     return (
-        <AppWrapper>
+        <AppWrapper className='container'>
             <Header/>
             <Main/>
             <Footer/>
