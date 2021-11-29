@@ -7,7 +7,7 @@ const Favorites = () => {
         <FavoriteWrapper className="container">
             <div className="favoriteBox">
                 <ul className='citiesList'>
-                    <li className="cityItem"><span className='cityTitle'>Kiev</span>  <button className="deleteItem"><svg width={10} height={10} className="phone">
+                    <li className="cityItem"><span className='cityTitle'>Kievsdfsdfsdfsdf</span>  <button className="deleteItem"><svg width={10} height={10} className="phone">
                         <use xlinkHref={sprite + "#icon-close"}/>
                     </svg></button></li>
                     <li className="cityItem"><span className='cityTitle'>Kiev</span>  <button className="deleteItem"><svg width={10} height={10} className="phone">
