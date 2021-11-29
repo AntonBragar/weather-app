@@ -9,7 +9,7 @@ export const DaysButtonsWrapper = styled.div`
   }
   .button{
     border: none;
-   display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 126px;
