@@ -24,18 +24,18 @@ export const FavoriteWrapper = styled.div`
     overflow: scroll;
     width: inherit;
     padding-bottom: 5px;
-    
+
     ::-webkit-scrollbar {
       width: 0px;
-      height: 5px;
+      height: 3px;
       border-radius: 4px;
       background-color: rgba(255, 255, 255, 0.15);
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: #FF6B09;
       border-radius: 4px;
-      height: 15px;
+      height: 5px;
     }
 
   }
