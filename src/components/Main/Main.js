@@ -10,6 +10,7 @@ const Main = () => {
             <CurrentWeather/>
             <DaysButtons/>
             <CurrentDate/>
+            <FiveDaysWeather/>
         </div>
     );
 };
