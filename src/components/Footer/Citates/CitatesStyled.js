@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CitatesWrapper = styled.div`
   .quotes {
     margin-top: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 75px;
     width: 280px;
     height: 50px;
   }
