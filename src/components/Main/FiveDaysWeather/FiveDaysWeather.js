@@ -23,37 +23,7 @@ const FiveDaysWeather = () => {
                                 <span className='tempNum'>-3&#176;</span>
                             </li>
                         </ul>
-                        <a href="" className="moreInfo">more info</a>
-                    </li>
-                    <li className="forecastItem"><p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <a href="" className="moreInfo">more info</a>
-                    </li>
-                    <li className="forecastItem"><p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <a href="" className="moreInfo">more info</a>
+                        <button href="" className="moreInfo">more info</button>
                     </li>
                     <li className="forecastItem">
                         <p className="week">Sunday</p>
@@ -69,37 +39,7 @@ const FiveDaysWeather = () => {
                                 <span className='tempNum'>-3&#176;</span>
                             </li>
                         </ul>
-                        <a href="" className="moreInfo">more info</a>
-                    </li>
-                    <li className="forecastItem"><p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <a href="" className="moreInfo">more info</a>
-                    </li>
-                    <li className="forecastItem"><p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <a href="" className="moreInfo">more info</a>
+                        <button href="" className="moreInfo">more info</button>
                     </li>
                     <li className="forecastItem">
                         <p className="week">Sunday</p>
@@ -115,9 +55,10 @@ const FiveDaysWeather = () => {
                                 <span className='tempNum'>-3&#176;</span>
                             </li>
                         </ul>
-                        <a href="" className="moreInfo">more info</a>
+                        <button href="" className="moreInfo">more info</button>
                     </li>
-                    <li className="forecastItem"><p className="week">Sunday</p>
+                    <li className="forecastItem">
+                        <p className="week">Sunday</p>
                         <p className="date">09 Feb</p>
                         <img src={weather} alt="" className="icon"/>
                         <ul className='tempList'>
@@ -130,9 +71,10 @@ const FiveDaysWeather = () => {
                                 <span className='tempNum'>-3&#176;</span>
                             </li>
                         </ul>
-                        <a href="" className="moreInfo">more info</a>
+                        <button href="" className="moreInfo">more info</button>
                     </li>
-                    <li className="forecastItem"><p className="week">Sunday</p>
+                    <li className="forecastItem">
+                        <p className="week">Sunday</p>
                         <p className="date">09 Feb</p>
                         <img src={weather} alt="" className="icon"/>
                         <ul className='tempList'>
@@ -145,7 +87,7 @@ const FiveDaysWeather = () => {
                                 <span className='tempNum'>-3&#176;</span>
                             </li>
                         </ul>
-                        <a href="" className="moreInfo">more info</a>
+                        <button href="" className="moreInfo">more info</button>
                     </li>
                 </ul>
                 <ul className="hourlyForecastsList">

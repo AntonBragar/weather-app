@@ -115,6 +115,8 @@ export const FiveDaysWeatherWrapper = styled.div`
   }
 
   .moreInfo {
+    background-color: transparent;
+    border: none;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -123,6 +125,9 @@ export const FiveDaysWeatherWrapper = styled.div`
     text-decoration-line: underline;
     color: #FFFFFF;
     opacity: 0.3;
+    :hover{
+      opacity: 1;
+    }
   }
 
   .hourlyForecastsList {

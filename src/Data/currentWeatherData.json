@@ -1,0 +1,44 @@
+{
+  "api":"api.openweathermap.org/data/2.5/weather?q=london&appid=48bbbb719c2c5b12dc6d3c6ec2e60cd2",
+  "coord": {
+    "lon": -0.1257,
+    "lat": 51.5085
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 284.79,
+    "feels_like": 284.2,
+    "temp_min": 283.78,
+    "temp_max": 285.52,
+    "pressure": 1010,
+    "humidity": 84
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 6.17,
+    "deg": 250
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1638286041,
+  "sys": {
+    "type": 2,
+    "id": 2019646,
+    "country": "GB",
+    "sunrise": 1638258166,
+    "sunset": 1638287762
+  },
+  "timezone": 0,
+  "id": 2643743,
+  "name": "London",
+  "cod": 200
+}
