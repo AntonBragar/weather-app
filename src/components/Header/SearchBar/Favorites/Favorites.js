@@ -14,7 +14,6 @@ const Favorites = () => {
         const filteredCities = cities.filter((city) => city.id !== +id)
         setCities(filteredCities)
     }
-    console.log(cities);
 
     return (
         <FavoriteWrapper className="container">
