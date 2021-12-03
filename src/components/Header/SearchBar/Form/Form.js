@@ -6,6 +6,7 @@ import {addFavorite} from "../../../../redux/favorites/favoritesActions";
 
 const Form = () => {
     const [favorite, setFavorite] = useState('');
+
     const dispatch = useDispatch()
 
     const onHandlerChange = (e) => {
