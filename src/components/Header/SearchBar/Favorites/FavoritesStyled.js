@@ -52,19 +52,7 @@ export const FavoriteWrapper = styled.div`
     margin: 5px;
     
   }
-
-  .cityItem:hover {
-    height: 38px;
-
-    .cityTitle {
-      font-size: 18px;
-    }
-
-    .deleteItem > svg {
-      height: 15px;
-      width: 15px;
-    }
-  }
+  
 
   .cityTitle {
     padding: 0px 10px;
@@ -77,6 +65,12 @@ export const FavoriteWrapper = styled.div`
     background-color: transparent;
     border: none;
     fill: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      margin: 2px;
+    }
   }
 
   .rightArrow {

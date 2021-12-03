@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+
 import {FavoriteWrapper} from "./FavoritesStyled";
 import sprite from "../../../../img/symbol-defs.svg";
 import {useDispatch, useSelector} from "react-redux";
@@ -16,14 +16,14 @@ const Favorites = () => {
         dispatch(deleteFavorite(id))
     }
 
-    return (
+     return favoriteCities.length ?(
         <FavoriteWrapper className="container">
             <div className="favoriteBox">
                 <ul className='citiesList'>
                     {favoriteCities?.map(({city, id}) => (
                         <li key={id} className="cityItem"><span className='cityTitle'>{city}</span>
                             <button className="deleteItem" id={id} onClick={deleteCity}>
-                                <svg id={id} width={10} height={10} className="phone">
+                                <svg id={id} width={10} height={10} >
                                     <use xlinkHref={sprite + "#icon-close"}/>
                                 </svg>
                             </button>
@@ -37,7 +37,7 @@ const Favorites = () => {
                 </button>
             </div>
         </FavoriteWrapper>
-    );
+    ):null;
 };
 
 export default Favorites;
