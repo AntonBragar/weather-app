@@ -3,22 +3,24 @@ import {FormWrapper} from "./FormStyled";
 import sprite from "../../../../img/symbol-defs.svg";
 import {useDispatch} from "react-redux";
 import {addFavorite} from "../../../../redux/favorites/favoritesActions";
+import {addSearchCity} from "../../../../redux/search/searchActions";
 
 const Form = () => {
-    const [favorite, setFavorite] = useState('');
+    const [city, setCity] = useState('');
 
     const dispatch = useDispatch()
 
     const onHandlerChange = (e) => {
         const {value} = e.target
-        setFavorite(value)
+        setCity(value)
     }
 
     const onHandlerSubmit = (e) => {
         e.preventDefault();
+        dispatch(addSearchCity(city));
     }
     const onHandlerAddFavorite = () => {
-        dispatch(addFavorite(favorite))
+        dispatch(addFavorite(city));
     }
 
     return (
