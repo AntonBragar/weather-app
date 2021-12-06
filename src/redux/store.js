@@ -1,10 +1,12 @@
 import {  combineReducers, configureStore } from "@reduxjs/toolkit";
 import {addFavoriteReducer} from "./favorites/favoritesReducers";
-import {addSearchCityReducer} from "./search/searchReducers";
+import {addSearchCoordReducer} from "./coords/coordReducers";
+import weatherReducer from "./weather/weatherSlice"
 
 const rootReducer = combineReducers({
     favorite: addFavoriteReducer,
-    search: addSearchCityReducer,
+    coords: addSearchCoordReducer,
+    weather: weatherReducer,
 })
 const store = configureStore({
     reducer: rootReducer

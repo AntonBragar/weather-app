@@ -1,4 +1,3 @@
-
 import {FavoriteWrapper} from "./FavoritesStyled";
 import sprite from "../../../../img/symbol-defs.svg";
 import {useDispatch, useSelector} from "react-redux";
@@ -8,7 +7,7 @@ import {deleteFavorite} from "../../../../redux/favorites/favoritesActions";
 
 const Favorites = () => {
     let favoriteCities = useSelector(getFavoritesSelector)
-
+    // let favoriteCities = useSelector((state) => state.favorite)
     const dispatch = useDispatch()
 
     const deleteCity = (evt) => {
