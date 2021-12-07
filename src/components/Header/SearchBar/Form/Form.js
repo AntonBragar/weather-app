@@ -3,7 +3,7 @@ import {FormWrapper} from "./FormStyled";
 import sprite from "../../../../img/symbol-defs.svg";
 import {useDispatch} from "react-redux";
 import {addFavorite} from "../../../../redux/favorites/favoritesActions";
-import {addSearchCity} from "../../../../redux/search/searchActions";
+import {getCoordsOperation} from "../../../../redux/coords/coordOperations";
 
 const Form = () => {
     const [city, setCity] = useState('');
@@ -17,7 +17,7 @@ const Form = () => {
 
     const onHandlerSubmit = (e) => {
         e.preventDefault();
-        dispatch(addSearchCity(city));
+        dispatch(getCoordsOperation(city));
     }
     const onHandlerAddFavorite = () => {
         dispatch(addFavorite(city));

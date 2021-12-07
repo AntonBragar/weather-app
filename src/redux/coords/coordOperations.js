@@ -1,24 +1,3 @@
-// const URL = `https://test-35238-default-rtdb.firebaseio.com/`;
-// const BASE = `phoneBook.json`;
-// export const addALLContactOptions = () => async (dispatch, getState) => {
-//     dispatch(setLoading())
-//     try {
-//         const { data } = await axios.get(URL + BASE);
-//         if (data) {
-//             const contacts = Object.keys(data).map((key) => ({
-//                 id: key,
-//                 ...data[key],
-//             }));
-//             dispatch(addALLContact(contacts));
-//         } else return;
-//     } catch (error) {
-//         dispatch(setError(toast.error(`☠️Oh damn it ${error.message}!!`)));
-//     } finally {
-//         dispatch(setLoading());
-//     }
-// };
-
-
 import axios from "axios";
 import {addSearchCoordAction} from "../coords/coordActions";
 
