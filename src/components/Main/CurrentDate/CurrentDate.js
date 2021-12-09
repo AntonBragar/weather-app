@@ -27,7 +27,7 @@ const CurrentDate = () => {
         }
         setState((prevState) => ({
             ...prevState,
-            thisDay: converter(dt).getDay(),
+            thisDay: converter(dt).getDate(),
             weekDay: days[converter(dt).getDay()],
             month: months[converter(dt).getMonth()],
             sunrise: slicer(sunrise),
