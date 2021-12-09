@@ -7,3 +7,4 @@ export const addFavoriteReducer = createReducer([], {
     [deleteFavorite]: (state, {payload}) => state.filter((city) => city.id !== payload),
 })
 
+
