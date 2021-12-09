@@ -1,9 +1,12 @@
 import React from 'react';
 import {CurrentDateWrapper} from "./CurrentDateStyled";
 import sprite from "../../../img/symbol-defs.svg";
+import {currentWeatherSelector} from "../../../redux/weather/weatherSelectors";
+import {useSelector} from "react-redux";
 
 
 const CurrentDate = () => {
+    const {dt,sunrise,sunset} = useSelector(currentWeatherSelector)
     return (
         <div>
             <CurrentDateWrapper className="container">
