@@ -54,7 +54,9 @@ const CurrentDate = () => {
             timeConverter(dt, sunrise, sunset)
         }
         clock('on')
-        return clock('off')
+        return ()=>{
+            clock('off')
+        }
     }, [dt, sunrise, sunset, state.clock])
 
     return (
