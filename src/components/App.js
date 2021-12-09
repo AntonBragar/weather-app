@@ -12,14 +12,12 @@ import {getCoordsOperation} from "../redux/coords/coordOperations";
 const App = () => {
     const dispatch = useDispatch()
 
-    let coord = useSelector(getSearchCoordSelector)
+    const coord = useSelector(getSearchCoordSelector)
 
     useEffect(() => {
-        if (Object.keys(coord).length === 0) {
-            dispatch(getCoordsOperation('Kyiv'));
-        }
-        dispatch(weatherOperation(coord))
-    })
+        if (Object.keys(coord).length === 0) dispatch(getCoordsOperation('Kyiv'));
+        else dispatch(weatherOperation(coord))
+    },[dispatch,coord])
 
     return (
         <AppWrapper className='container'>

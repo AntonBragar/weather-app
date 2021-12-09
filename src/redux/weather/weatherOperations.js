@@ -1,5 +1,4 @@
 import axios from "axios";
-import {addSearchCoordAction} from "../coords/coordActions";
 import {getCurrentWeather, getDailyWeather, getHourlyWeather} from "./weatherSlice";
 
 const API_KEY = "48bbbb719c2c5b12dc6d3c6ec2e60cd2";

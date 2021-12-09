@@ -3,16 +3,14 @@ import {createSlice} from "@reduxjs/toolkit"
 const weatherSlice = createSlice({
     name: 'weather',
     initialState: {
-        current: null,
-        hourly: null,
-        daily: null,
+        current: {},
+        hourly: [],
+        daily: [],
     },
-
     reducers: {
         getCurrentWeather(state, {payload}) {
             state.current = payload
         },
-
         getHourlyWeather(state, {payload}) {
             state.hourly = payload
         },
