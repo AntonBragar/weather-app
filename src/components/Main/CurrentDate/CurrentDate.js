@@ -13,6 +13,7 @@ const CurrentDate = () => {
         month: '',
         sunrise: '',
         sunset: '',
+        clock:''
     });
 
     function timeConverter(dt, sunrise, sunset) {
@@ -34,11 +35,27 @@ const CurrentDate = () => {
         }));
     }
 
+    function clock(switcher){
+        let timer
+        if (switcher==='on'){
+          timer = setTimeout(() => {
+                setState((prevState) => ({
+                    ...prevState,
+                    clock: new Date().toLocaleTimeString()
+                }));
+            }, 1000);
+        }else if(switcher==='off'){
+            clearInterval(timer)
+        }
+    }
+
     useEffect(() => {
         if (dt && sunrise && sunset) {
             timeConverter(dt, sunrise, sunset)
         }
-    }, [dt, sunrise, sunset])
+        clock('on')
+        return clock('off')
+    }, [dt, sunrise, sunset, state.clock])
 
     return (
         <div>
@@ -51,7 +68,7 @@ const CurrentDate = () => {
                         </div>
                         <div className="monthAndTime">
                             <p className="month">{state.month}</p>
-                            <p className="time">21:30:56</p>
+                            <p className="time">{state.clock}</p>
                         </div>
                         <div className="sunShine">
                             <p className="sunrise">
