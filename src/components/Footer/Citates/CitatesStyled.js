@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const CitatesWrapper = styled.div`
   .quotes {
     margin-top: 30px;
-    margin-bottom: 70px;
+    padding-bottom: 70px;
     width: 280px;
-    height: 50px;
+    height: auto;
   }
   
   .quote {
