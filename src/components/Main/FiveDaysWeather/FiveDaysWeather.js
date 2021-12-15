@@ -1,9 +1,64 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {FiveDaysWeatherWrapper} from "./FiveDaysWeatherStyled";
 import weather from '../../../img/wether.png'
 import sprite from "../../../img/symbol-defs.svg";
+import {useSelector} from "react-redux";
+import {dailyWeatherSelector} from "../../../redux/weather/weatherSelectors";
+
+
 
 const FiveDaysWeather = () => {
+    const dailySelector = useSelector(dailyWeatherSelector);
+    // {dt, temp: {min, max}}
+    // const [state, setState] = useState({
+    //     weekDay: "",
+    //     date: "",
+    //     month: "",
+    //     dailyIcon: "",
+    //     tempMax: "",
+    //     tempMin: "",
+    //     time: "",
+    //     hourlyIcon: "",
+    //     pressure: "",
+    //     humidity: "",
+    //     windSpeed: "",
+    // });
+
+    const [daily, setDaily] = useState()
+
+    useEffect(() => {
+        if (dailySelector) {
+            setDaily(dailySelector)
+            // timeConverter(daily);
+        }
+        // if (daily.temp?.min && daily.temp?.max) {
+        //     setState((prevState) => ({
+        //         ...prevState,
+        //         tempMax: daily.temp?.max,
+        //         tempMin: daily.temp?.min,
+        //     }))
+        // }
+    }, [dailySelector])
+
+    // function timeConverter(daily) {
+    //     const {dt} = daily;
+    //     const converter = (date) => new Date(date * 1000);
+    //     const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
+    //         "Aug","Sep","Oct","Nov","Dec"];
+    //     const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
+    //     const slicer = (data) => {
+    //         let result = converter(data).toLocaleTimeString()
+    //         return result.slice(0, result.lastIndexOf(':'))
+    //     }
+    //
+    //     setState((prevState) => ({
+    //         ...prevState,
+    //         date: converter(dt).getDate(),
+    //         weekDay: days[converter(dt).getDay()],
+    //         month: months[converter(dt).getMonth()],
+    //     }));
+    // }
+
     return (
         <FiveDaysWeatherWrapper className="container">
             <div className="weatherBox">
