@@ -21,7 +21,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     color: #FFFFFF;
   }
 
-  .forecastsList {
+  .dailyforecastsList {
     width: 220px;
     overflow: scroll;
     margin-top: 20px;

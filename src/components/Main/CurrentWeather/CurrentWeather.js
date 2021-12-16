@@ -2,7 +2,6 @@ import React from 'react';
 import weather from "../../../img/wether.png";
 import {CurrentWeatherWrapper} from "./CurrentWeatherStyled";
 import {useSelector} from "react-redux";
-import {currentWeatherSelector} from "../../../redux/weather/weatherSelectors";
 import {getSearchCoordSelector} from "../../../redux/coords/coordSelectors";
 
 

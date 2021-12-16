@@ -4,147 +4,64 @@ import weather from '../../../img/wether.png'
 import sprite from "../../../img/symbol-defs.svg";
 import {useSelector} from "react-redux";
 import {dailyWeatherSelector} from "../../../redux/weather/weatherSelectors";
-
+import {getSearchCoordSelector} from "../../../redux/coords/coordSelectors";
+import DailyList from "./DailyForecast/DailyList";
 
 
 const FiveDaysWeather = () => {
     const dailySelector = useSelector(dailyWeatherSelector);
-    // {dt, temp: {min, max}}
-    // const [state, setState] = useState({
-    //     weekDay: "",
-    //     date: "",
-    //     month: "",
-    //     dailyIcon: "",
-    //     tempMax: "",
-    //     tempMin: "",
-    //     time: "",
-    //     hourlyIcon: "",
-    //     pressure: "",
-    //     humidity: "",
-    //     windSpeed: "",
-    // });
+    const {name, country} = useSelector(getSearchCoordSelector);
 
-    const [daily, setDaily] = useState()
+    const [state, setState] = useState()
 
     useEffect(() => {
-        if (dailySelector) {
-            setDaily(dailySelector)
-            // timeConverter(daily);
+        if (dailySelector && name && country) {
+            const daily = dailySelector.map(({dt, temp, weather}) => {
+                const convertingTimeFnForState = timeConverter(dt);
+                const convertingTempFnForState = tempConverter(temp)
+                return {dt: dt, ...convertingTimeFnForState, ...convertingTempFnForState, icon: weather[0].icon}
+            })
+            setState((prevState) => ({
+                ...prevState,
+                name:name,
+                country:country,
+                daily
+            }))
         }
-        // if (daily.temp?.min && daily.temp?.max) {
-        //     setState((prevState) => ({
-        //         ...prevState,
-        //         tempMax: daily.temp?.max,
-        //         tempMin: daily.temp?.min,
-        //     }))
-        // }
-    }, [dailySelector])
+    }, [dailySelector,name, country])
 
-    // function timeConverter(daily) {
-    //     const {dt} = daily;
-    //     const converter = (date) => new Date(date * 1000);
-    //     const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
-    //         "Aug","Sep","Oct","Nov","Dec"];
-    //     const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
-    //     const slicer = (data) => {
-    //         let result = converter(data).toLocaleTimeString()
-    //         return result.slice(0, result.lastIndexOf(':'))
-    //     }
-    //
-    //     setState((prevState) => ({
-    //         ...prevState,
-    //         date: converter(dt).getDate(),
-    //         weekDay: days[converter(dt).getDay()],
-    //         month: months[converter(dt).getMonth()],
-    //     }));
-    // }
+    function tempConverter(temp) {
+        const {min,max}=temp
+        const converter = (data)=>Math.floor(data)
+        return{
+            tempMax: converter(max),
+            tempMin: converter(min)
+        }
+    }
+
+    function timeConverter(dt) {
+        const converter = (date) => new Date(date * 1000);
+        const monthsShortName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+            "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const daysFullName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        // const slicer = (data) => {
+        //     let result = converter(data).toLocaleTimeString()
+        //     return result.slice(0, result.lastIndexOf(':'))
+        // }
+        return {
+            date: converter(dt).getDate(),
+            weekDayFull: daysFullName[converter(dt).getDay()],
+            monthShort: monthsShortName[converter(dt).getMonth()]
+        }
+    }
 
     return (
         <FiveDaysWeatherWrapper className="container">
             <div className="weatherBox">
-                <p className="titleLocation">Kyiv, UA</p>
-                <ul className="forecastsList">
-                    <li className="forecastItem">
-                        <p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <button href="" className="moreInfo">more info</button>
-                    </li>
-                    <li className="forecastItem">
-                        <p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <button href="" className="moreInfo">more info</button>
-                    </li>
-                    <li className="forecastItem">
-                        <p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <button href="" className="moreInfo">more info</button>
-                    </li>
-                    <li className="forecastItem">
-                        <p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <button href="" className="moreInfo">more info</button>
-                    </li>
-                    <li className="forecastItem">
-                        <p className="week">Sunday</p>
-                        <p className="date">09 Feb</p>
-                        <img src={weather} alt="" className="icon"/>
-                        <ul className='tempList'>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>min</span>
-                                <span className='tempNum'>-2&#176;</span>
-                            </li>
-                            <li className='tempItem'>
-                                <span className='tempTitle'>max</span>
-                                <span className='tempNum'>-3&#176;</span>
-                            </li>
-                        </ul>
-                        <button href="" className="moreInfo">more info</button>
-                    </li>
-                </ul>
+                <p className="titleLocation">{state?.name},{state?.country}</p>
+
+                <DailyList daily={state?.daily}/>
+
                 <ul className="hourlyForecastsList">
                     <li className="hourlyForecastItem">
                         <p className="time">00:00</p>
