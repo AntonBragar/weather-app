@@ -7,7 +7,7 @@ import {deleteFavorite} from "../../../../redux/favorites/favoritesActions";
 
 const Favorites = () => {
     let favoriteCities = useSelector(getFavoritesSelector)
-    // let favoriteCities = useSelector((state) => state.favorite)
+
     const dispatch = useDispatch()
 
     const deleteCity = (evt) => {

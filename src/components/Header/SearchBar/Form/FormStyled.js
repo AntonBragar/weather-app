@@ -1,7 +1,8 @@
 import styled from "styled-components";
+
 export const FormWrapper = styled.div`
 
-  .inputBox{
+  .inputBox {
     margin: 30px auto 0;
     position: relative;
     min-width: 280px;
@@ -13,7 +14,8 @@ export const FormWrapper = styled.div`
       width: 520px;
     }
   }
-  .inputForm{
+
+  .inputForm {
     width: inherit;
     height: 48px;
     @media (min-width: 768px) {
@@ -26,6 +28,7 @@ export const FormWrapper = styled.div`
       width: 520px;
     }
   }
+
   input {
     padding-left: 57px;
     background-color: #FFFFFF;
@@ -49,20 +52,25 @@ export const FormWrapper = styled.div`
     }
   }
 
-  .target,.favorite{
+  .target, .favorite {
     position: absolute;
     border-radius: 50%;
     border: none;
     fill: #7E8691;
     background-color: transparent;
+    :hover {
+      fill: #000000;
+    }
   }
-  .target{
+  
+  .target {
     top: 12px;
     left: 20px;
   }
-  .favorite{
+
+  .favorite {
     top: 12px;
     right: 20px;
   }
-  
+
 `
