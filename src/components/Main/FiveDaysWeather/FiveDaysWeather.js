@@ -23,17 +23,17 @@ const FiveDaysWeather = () => {
             })
             setState((prevState) => ({
                 ...prevState,
-                name:name,
-                country:country,
+                name: name,
+                country: country,
                 daily
             }))
         }
-    }, [dailySelector,name, country])
+    }, [dailySelector, name, country])
 
     function tempConverter(temp) {
-        const {min,max}=temp
-        const converter = (data)=>Math.floor(data)
-        return{
+        const {min, max} = temp
+        const converter = (data) => Math.floor(data)
+        return {
             tempMax: converter(max),
             tempMin: converter(min)
         }

@@ -6,8 +6,8 @@ const API_KEY = "48bbbb719c2c5b12dc6d3c6ec2e60cd2";
 export const getCoordsOperation = (city) => async (dispatch) => {
     try {
         const {data} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
-        const {coord, name, sys:{country}, main:{temp,temp_max, temp_min}} = data;
-        dispatch(addSearchCoordAction({...coord,name,country,temp,temp_max,temp_min}));
+        const {coord, name, sys: {country}, main: {temp, temp_max, temp_min}, weather} = data;
+        dispatch(addSearchCoordAction({...coord, name, country, temp, temp_max, temp_min, icon: weather[0].icon}));
     } catch (error) {
 
     } finally {
