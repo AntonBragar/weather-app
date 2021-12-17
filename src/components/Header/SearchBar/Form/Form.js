@@ -34,7 +34,7 @@ const Form = () => {
         const {data} = await axios.get('https://api.db-ip.com/v2/free/self')
         const {city} = data
         setSearchCity(city)
-        if (city != searchCity) {
+        if (city !== searchCity) {
             dispatch(getCoordsOperation(city));
         }
     }

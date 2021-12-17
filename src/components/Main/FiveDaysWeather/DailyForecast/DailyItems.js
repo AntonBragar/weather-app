@@ -1,27 +1,27 @@
 import React from 'react';
-import weather from "../../../../img/wether.png";
+import {createWeatherIconSrc} from "../../../../utils/createWeatherIconSrc";
 
 const DailyItems = ({element}) => {
-    const{weekDayFull,date,monthShort,tempMin,tempMax}=element
+    const {weekDayFull, date, monthShort, tempMin, tempMax, icon,dt} = element
     return (
         <>
-                <li className="forecastItem">
+            <li className="forecastItem">
                 <p className="week">{weekDayFull}</p>
                 <p className="date">{date} {monthShort}</p>
-                <img src={weather} alt="" className="icon"/>
+                <img src={createWeatherIconSrc(icon)} alt={'Weather Icon'} className="icon"/>
                 <ul className='tempList'>
-                <li className='tempItem'>
-                <span className='tempTitle'>min</span>
-                <span className='tempNum'>{tempMin}&#176;</span>
-                </li>
-                <li className='tempItem'>
-                <span className='tempTitle'>max</span>
-                <span className='tempNum'>{tempMax}&#176;</span>
-                </li>
+                    <li className='tempItem'>
+                        <span className='tempTitle'>min</span>
+                        <span className='tempNum'>{tempMin}&#176;</span>
+                    </li>
+                    <li className='tempItem'>
+                        <span className='tempTitle'>max</span>
+                        <span className='tempNum'>{tempMax}&#176;</span>
+                    </li>
                 </ul>
-                <button href="" className="moreInfo">more info</button>
-                </li>
-          </>
+                <button href="" id={dt} className="moreInfo">more info</button>
+            </li>
+        </>
     );
 };
 
