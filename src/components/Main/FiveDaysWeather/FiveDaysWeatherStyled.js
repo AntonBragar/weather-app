@@ -25,6 +25,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     width: 220px;
     overflow: scroll;
     margin-top: 20px;
+    margin-bottom: 10px;
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
