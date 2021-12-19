@@ -14,6 +14,8 @@ const Form = () => {
 
     const dispatch = useDispatch()
 
+
+
     const onHandlerChange = (e) => {
         const {value} = e.target
         setSearchCity(value)
@@ -33,10 +35,7 @@ const Form = () => {
     const onHandlerGetLocation = async () => {
         const {data} = await axios.get('https://api.db-ip.com/v2/free/self')
         const {city} = data
-        const currentLocationCity = city?.replace(/(.+)/,'')
-        const testCity = "Kharkiv (Shevchenkivs'kyi District)"
-        console.log(testCity.replace(/(.+)/,' '))
-        console.log(currentLocationCity)
+        let currentLocationCity = city.replace(/\(.+\)/,'')
         setSearchCity(currentLocationCity)
         if (currentLocationCity !== searchCity) {
             dispatch(getCoordsOperation(currentLocationCity));
