@@ -1,8 +1,10 @@
 import React from 'react';
 import {createWeatherIconSrc} from "../../../../utils/createWeatherIconSrc";
 
-const DailyItems = ({element}) => {
-    const {weekDayFull, date, monthShort, tempMin, tempMax, icon,dt} = element
+
+const DailyItems = ({element, onHandlerClickMoreInfo}) => {
+    const {weekDayFull, date, monthShort, tempMin, tempMax, icon, dt} = element
+
     return (
         <>
             <li className="forecastItem">
@@ -19,7 +21,7 @@ const DailyItems = ({element}) => {
                         <span className='tempNum'>{tempMax}&#176;</span>
                     </li>
                 </ul>
-                <button href="" id={dt} className="moreInfo">more info</button>
+                <button onClick={onHandlerClickMoreInfo} href="" id={date} className="moreInfo">more info</button>
             </li>
         </>
     );
