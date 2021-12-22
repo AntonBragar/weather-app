@@ -14,8 +14,6 @@ const Form = () => {
 
     const dispatch = useDispatch()
 
-
-
     const onHandlerChange = (e) => {
         const {value} = e.target
         setSearchCity(value)

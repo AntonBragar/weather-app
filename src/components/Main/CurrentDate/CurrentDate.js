@@ -3,61 +3,49 @@ import {CurrentDateWrapper} from "./CurrentDateStyled";
 import sprite from "../../../img/symbol-defs.svg";
 import {currentWeatherSelector} from "../../../redux/weather/weatherSelectors";
 import {useSelector} from "react-redux";
+import Clock from "./Clock";
+import { utcToZonedTime} from "date-fns-tz";
 
 
 const CurrentDate = () => {
-    const {dt, sunrise, sunset} = useSelector(currentWeatherSelector)
+    const {dt, sunrise, sunset, timezone} = useSelector(currentWeatherSelector)
     const [state, setState] = useState({
         thisDay: '',
         weekDay: '',
         month: '',
         sunrise: '',
         sunset: '',
-        clock:''
     });
 
-    function timeConverter(dt, sunrise, sunset) {
-        const converter = (date) => new Date(date * 1000);
-        const months = ["January","February","March","April","May","June","July",
-            "August","September","October","November","December"];
+    function timeConverter(dt, sunrise, sunset, timezone) {
+
+        const converter = (dateUtc,timezone) => {
+            const date = new Date(dateUtc*1000)
+            return  utcToZonedTime(date, timezone)
+        };
+
+        const months = ["January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"];
         const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
-        const slicer = (data) => {
-            let result = converter(data).toLocaleTimeString()
-            return result.slice(0, result.lastIndexOf(':'))
-        }
+
+        const sunriseTime = `${converter(sunrise,timezone).getHours()}:${converter(sunrise,timezone).getMinutes()}`;
+        const sunsetTime = `${converter(sunset,timezone).getHours()}:${converter(sunset,timezone).getMinutes()}`;
+
         setState((prevState) => ({
             ...prevState,
-            thisDay: converter(dt).getDate(),
-            weekDay: days[converter(dt).getDay()],
-            month: months[converter(dt).getMonth()],
-            sunrise: slicer(sunrise),
-            sunset: slicer(sunset),
+            thisDay: converter(dt,timezone).getDate(),
+            weekDay: days[converter(dt,timezone).getDay()],
+            month: months[converter(dt,timezone).getMonth()],
+            sunrise: sunriseTime,
+            sunset: sunsetTime,
         }));
     }
 
-    function clock(switcher){
-        let timer
-        if (switcher==='on'){
-          timer = setTimeout(() => {
-                setState((prevState) => ({
-                    ...prevState,
-                    clock: new Date().toLocaleTimeString()
-                }));
-            }, 1000);
-        }else if(switcher==='off'){
-            clearInterval(timer)
-        }
-    }
-
     useEffect(() => {
-        if (dt && sunrise && sunset) {
-            timeConverter(dt, sunrise, sunset)
+        if (dt && sunrise && sunset && timezone) {
+            timeConverter(dt, sunrise, sunset, timezone)
         }
-        clock('on')
-        return ()=>{
-            clock('off')
-        }
-    }, [dt, sunrise, sunset, state.clock])
+    }, [dt, sunrise, sunset, timezone])
 
     return (
         <div>
@@ -70,7 +58,7 @@ const CurrentDate = () => {
                         </div>
                         <div className="monthAndTime">
                             <p className="month">{state.month}</p>
-                            <p className="time">{state.clock}</p>
+                            <Clock/>
                         </div>
                         <div className="sunShine">
                             <p className="sunrise">

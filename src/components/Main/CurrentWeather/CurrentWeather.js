@@ -1,7 +1,6 @@
-import {CurrentWeatherWrapper} from "./CurrentWeatherStyled";
+import {CurrentWeatherWrapper, WeatherImageContainer} from "./CurrentWeatherStyled";
 import {useSelector} from "react-redux";
 import {getSearchCoordSelector} from "../../../redux/coords/coordSelectors";
-import {createWeatherIconSrc} from "../../../utils/createWeatherIconSrc";
 
 
 const CurrentWeather = () => {
@@ -13,7 +12,7 @@ const CurrentWeather = () => {
             <div className='favoriteBox'>
                 <div className='itemsBox'>
                     <div className='weatherAndLocation'>
-                        <img className='weatherImage' alt={'Weather Icon'} src={createWeatherIconSrc(icon)}/>
+                        <WeatherImageContainer icon={icon}/>
                         <p className="location">{name},{country}</p>
                     </div>
                     <div className='temperature'>

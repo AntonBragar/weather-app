@@ -1,13 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {FiveDaysWeatherWrapper} from "./FiveDaysWeatherStyled";
 import {useSelector} from "react-redux";
-import {dailyWeatherSelector, hourlyWeatherSelector} from "../../../redux/weather/weatherSelectors";
+import {
+    currentWeatherSelector,
+    dailyWeatherSelector,
+    hourlyWeatherSelector
+} from "../../../redux/weather/weatherSelectors";
 import {getSearchCoordSelector} from "../../../redux/coords/coordSelectors";
 import DailyList from "./DailyForecast/DailyList";
 import HourlyList from "./HourlyForecast/HourlyList";
+import {format, utcToZonedTime} from "date-fns-tz";
 
 
 const FiveDaysWeather = () => {
+    const {timezone} = useSelector(currentWeatherSelector)
     const dailySelector = useSelector(dailyWeatherSelector);
     const hourlySelector = useSelector(hourlyWeatherSelector);
     const {name, country} = useSelector(getSearchCoordSelector);
@@ -17,13 +23,13 @@ const FiveDaysWeather = () => {
     useEffect(() => {
         if (dailySelector && hourlySelector && name && country) {
             const daily = dailySelector.map(({dt, temp, weather}) => {
-                const convertingTimeFnForState = timeConverter(dt);
+                const convertingTimeFnForState = timeConverter(dt,timezone);
                 const convertingTempFnForState = tempConverter(temp)
                 return {dt: dt, ...convertingTimeFnForState, ...convertingTempFnForState, icon: weather[0].icon}
             })
 
             const hourly = hourlySelector.map(({dt, temp, feels_like, pressure, humidity, wind_speed, weather}) => {
-                const convertingTimeFnForState = timeConverter(dt);
+                const convertingTimeFnForState = timeConverter(dt,timezone);
                 const convertingTempFnForState = tempConverter(temp, feels_like);
                 return {
                     dt: dt,
@@ -44,7 +50,7 @@ const FiveDaysWeather = () => {
                 hourly,
             }))
         }
-    }, [dailySelector, hourlySelector, name, country])
+    }, [dailySelector, hourlySelector, name, country, timezone])
 
     function onHandlerClickMoreInfo(e) {
         const {id} = e.target;
@@ -72,20 +78,20 @@ const FiveDaysWeather = () => {
         }
     }
 
-    function timeConverter(dt) {
-        const converter = (date) => new Date(date * 1000);
+    function timeConverter(dt, timezone) {
+        const converter = (dateUtc, timezone) => {
+            const date = new Date(dateUtc * 1000)
+            return utcToZonedTime(date, timezone)
+        };
         const monthsShortName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
             "Aug", "Sep", "Oct", "Nov", "Dec"];
         const daysFullName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const slicer = (data) => {
-            let result = converter(data).toLocaleTimeString()
-            return result.slice(0, result.lastIndexOf(':'))
-        }
+        const pattern = 'HH:mm'
         return {
-            date: converter(dt).getDate(),
-            time: slicer(dt),
-            weekDayFull: daysFullName[converter(dt).getDay()],
-            monthShort: monthsShortName[converter(dt).getMonth()]
+            date: converter(dt,timezone).getDate(),
+            time: format(converter(dt,timezone), pattern, timezone),
+            weekDayFull: daysFullName[converter(dt,timezone).getDay()],
+            monthShort: monthsShortName[converter(dt,timezone).getMonth()]
         }
     }
 
