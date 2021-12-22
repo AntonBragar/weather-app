@@ -1,16 +1,24 @@
 import React from 'react';
-import weather from "../../../../img/wether.png";
 import sprite from "../../../../img/symbol-defs.svg";
-import {createWeatherIconSrc} from "../../../../utils/createWeatherIconSrc";
+import {WeatherImageContainer} from "../FiveDaysWeatherStyled";
 
 const HourlyItems = ({element}) => {
-    const {time, temp, icon, feels_like, pressure, humidity, wind_speed} = element
+    const {time, temp, icon, feelsLike, pressure, humidity, wind_speed} = element
     return (
         <>
             <li className="hourlyForecastItem">
                 <p className="time">{time}</p>
-                <img src={createWeatherIconSrc(icon)} alt="" className="icon"/>
-                <p className="temp">{temp}&#176;</p>
+                <WeatherImageContainer icon={icon}/>
+                <ul className='currentFeelsTempList'>
+                    <li className='tempItem'>
+                        <span className='tempTitle'>Current</span>
+                        <span className='tempNum'>{temp}&#176;</span>
+                    </li>
+                    <li className='tempItem'>
+                        <span className='tempTitle'>Feels</span>
+                        <span className='tempNum'>{feelsLike}&#176;</span>
+                    </li>
+                </ul>
                 <ul className="atmosphericList">
                     <li className="atmosphericItem">
                         <svg width={10} height={10} className="pressureIcon">

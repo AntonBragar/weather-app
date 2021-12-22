@@ -1,4 +1,15 @@
 import styled from "styled-components";
+import {createWeatherIconSrc} from "../../../utils/createWeatherIconSrc";
+
+
+export const WeatherImageContainer = styled.div`
+  background-image: url(${({ icon }) => createWeatherIconSrc(icon)});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+`
 
 export const CurrentWeatherWrapper = styled.div`
   .favoriteBox {
@@ -20,18 +31,13 @@ export const CurrentWeatherWrapper = styled.div`
   }
 
   .weatherAndLocation {
-    margin-top: 35px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
-  .weatherImage {
-    width: 35px;
-    height: auto;
-    margin-bottom: 5px;
-  }
+  
 
   .location {
     font-size: 16px;

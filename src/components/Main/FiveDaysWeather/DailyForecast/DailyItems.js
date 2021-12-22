@@ -1,16 +1,16 @@
 import React from 'react';
-import {createWeatherIconSrc} from "../../../../utils/createWeatherIconSrc";
+import {WeatherImageContainer} from "../FiveDaysWeatherStyled";
 
 
 const DailyItems = ({element, onHandlerClickMoreInfo}) => {
-    const {weekDayFull, date, monthShort, tempMin, tempMax, icon, dt} = element
+    const {weekDayFull, date, monthShort, tempMin, tempMax, icon} = element
 
     return (
         <>
             <li className="forecastItem">
                 <p className="week">{weekDayFull}</p>
                 <p className="date">{date} {monthShort}</p>
-                <img src={createWeatherIconSrc(icon)} alt={'Weather Icon'} className="icon"/>
+                <WeatherImageContainer icon={icon}/>
                 <ul className='tempList'>
                     <li className='tempItem'>
                         <span className='tempTitle'>min</span>

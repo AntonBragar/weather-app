@@ -1,4 +1,15 @@
 import styled from "styled-components";
+import {createWeatherIconSrc} from "../../../utils/createWeatherIconSrc";
+
+
+export const WeatherImageContainer = styled.div`
+  background-image: url(${({icon}) => createWeatherIconSrc(icon)});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 40px;
+`
 
 export const FiveDaysWeatherWrapper = styled.div`
   .weatherBox {
@@ -22,7 +33,7 @@ export const FiveDaysWeatherWrapper = styled.div`
   }
 
   .dailyforecastsList {
-    width: 220px;
+    width: 230px;
     overflow: scroll;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -83,37 +94,38 @@ export const FiveDaysWeatherWrapper = styled.div`
   .tempList {
     display: flex;
     margin-bottom: 5px;
-  }
 
-  .tempItem {
-    display: flex;
-    flex-direction: column;
+    .tempItem {
+      display: flex;
+      flex-direction: column;
 
-    :first-child {
-      padding-right: 5px;
-      border-right: 1px solid #27384A;
+      :first-child {
+        padding-right: 5px;
+        border-right: 1px solid #27384A;
+      }
+
+      :last-child {
+        padding-left: 5px;
+      }
     }
 
-    :last-child {
-      padding-left: 5px;
+    .tempTitle {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: #767D85;
+    }
+
+    .tempNum {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FF6B09;
     }
   }
 
-  .tempTitle {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: #767D85;
-  }
-
-  .tempNum {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    color: #FF6B09;
-  }
 
   .moreInfo {
     background-color: transparent;
@@ -126,7 +138,8 @@ export const FiveDaysWeatherWrapper = styled.div`
     text-decoration-line: underline;
     color: #FFFFFF;
     opacity: 0.3;
-    :hover{
+
+    :hover {
       opacity: 1;
     }
   }
@@ -139,6 +152,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
+
     ::-webkit-scrollbar {
       width: 0px;
       height: 3px;
@@ -163,7 +177,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     align-items: center;
     margin-right: 20px;
 
-    
+
   }
 
   .time {
@@ -180,52 +194,70 @@ export const FiveDaysWeatherWrapper = styled.div`
   }
 
   .icon {
-    
+
   }
 
-  .temp {
+  .currentFeelsTempList {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 10px;
+    .tempItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .tempTitle {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #767D85;
+    margin-bottom: 4px;
+  }
+
+  .tempNum {
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    line-height: 19px;
     color: #FF6B09;
   }
+}
 
-  .atmosphericList {
-    padding-bottom: 15px;
-  }
-  }
+.atmosphericList {
+  padding-bottom: 15px;
+}
 
-  .atmosphericItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    
-  }
+.atmosphericItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
 
 
-  .text{
-    margin-left: 10px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
-    opacity: 0.54;
-  }
-  .pressureIcon,.humidityIcon,.windSpeedIcon {
-    fill: #FFFFFF;
-    opacity: 0.54;
-    width: 18px;
-    height: auto;
-  }
-  {
-  
-  
+.text {
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  opacity: 0.54;
+}
+
+.pressureIcon, .humidityIcon, .windSpeedIcon {
+  fill: #FFFFFF;
+  opacity: 0.54;
+  width: 18px;
+  height: auto;
+}
+
+{
+
+
 `
