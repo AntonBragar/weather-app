@@ -23,6 +23,7 @@ const Form = () => {
         e.preventDefault();
         dispatch(getCoordsOperation(searchCity));
     }
+    
     const onHandlerAddFavorite = () => {
         let isInfavorite = favoriteCities.some(({city}) => city === searchCity);
         if (searchCity && !isInfavorite) {
@@ -33,7 +34,7 @@ const Form = () => {
     const onHandlerGetLocation = async () => {
         const {data} = await axios.get('https://api.db-ip.com/v2/free/self')
         const {city} = data
-        let currentLocationCity = city.replace(/\(.+\)/,'')
+        let currentLocationCity = city?.replace(/\(.+\)/,'')
         setSearchCity(currentLocationCity)
         if (currentLocationCity !== searchCity) {
             dispatch(getCoordsOperation(currentLocationCity));

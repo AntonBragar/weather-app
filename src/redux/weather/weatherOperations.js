@@ -10,7 +10,6 @@ export const weatherOperation = (coord) => async (dispatch) => {
         dispatch(getCurrentWeather({...current,timezone,timezone_offset}));
         dispatch(getHourlyWeather(data.hourly));
         dispatch(getDailyWeather(data.daily));
-
     } catch (error) {
 
     } finally {
