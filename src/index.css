@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -45,8 +46,5 @@ body {
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: 400;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #848383;
+  position: relative;
 }
