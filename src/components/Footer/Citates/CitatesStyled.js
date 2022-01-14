@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const CitatesWrapper = styled.div`
+  
   .quotes {
-    margin-top: 30px;
-    padding-bottom: 70px;
+    padding-top: 30px;
+    //padding-bottom: 70px;
     width: 280px;
-    height: auto;
+    height: fit-content;
   }
   
   .quote {
