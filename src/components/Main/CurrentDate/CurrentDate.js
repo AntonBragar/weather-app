@@ -7,6 +7,7 @@ import Clock from "./Clock";
 import { utcToZonedTime} from "date-fns-tz";
 
 
+
 const CurrentDate = () => {
     const {dt, sunrise, sunset, timezone} = useSelector(currentWeatherSelector)
     const [state, setState] = useState({
