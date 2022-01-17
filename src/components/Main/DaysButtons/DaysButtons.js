@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {DaysButtonsWrapper} from "./DaysButtonsStyled";
 import {useDispatch, useSelector} from "react-redux";
 import {dayIsToggled, fiveDaysIsToggled} from "../../../redux/daysButtons/daysButtonsSlice";
