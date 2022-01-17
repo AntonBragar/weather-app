@@ -7,7 +7,23 @@ export const DaysButtonsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  .button{
+  .button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 126px;
+    height: 27px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+  }
+  
+  .active {
     border: none;
     display: flex;
     align-items: center;

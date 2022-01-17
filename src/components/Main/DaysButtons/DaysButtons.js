@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {DaysButtonsWrapper} from "./DaysButtonsStyled";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {dayIsToggled, fiveDaysIsToggled} from "../../../redux/daysButtons/daysButtonsSlice";
+import {fiveDaysToggleSelector, todayToggleSelector} from "../../../redux/daysButtons/daysButtonsSelector";
+import classNames from "classnames";
 
 const DaysButtons = () => {
-
     const dispatch = useDispatch();
 
-    const onClickHandler = (e) => {
+    const isTodayToggle = useSelector(todayToggleSelector)
+    const isFiveDaysToggle = useSelector(fiveDaysToggleSelector)
+
+    function onClickHandler(e) {
         const {id} = e.target;
         if (id === "today") {
             dispatch(dayIsToggled())
@@ -16,11 +20,12 @@ const DaysButtons = () => {
         }
     }
 
+
     return (
         <DaysButtonsWrapper className="container">
             <div className="buttonsBox">
-                <button className="button today" id="today" onClick={onClickHandler}>today</button>
-                <button className="button fiveDays" id="fiveDays" onClick={onClickHandler}>5 days</button>
+                <button className={`${classNames(isTodayToggle ? "active" : "")} button`} id="today" onClick={onClickHandler}>today</button>
+                <button className={`${classNames(isFiveDaysToggle ? "active" : "")} button`} id="fiveDays" onClick={onClickHandler}>5 days</button>
             </div>
         </DaysButtonsWrapper>
     );
