@@ -7,15 +7,15 @@ import {useSelector} from "react-redux";
 import {fiveDaysToggleSelector, todayToggleSelector} from "../../redux/daysButtons/daysButtonsSelector";
 
 const Main = () => {
-    const isCurrentDateToggler = useSelector(todayToggleSelector)
-    const isFiveDaysToggler = useSelector(fiveDaysToggleSelector)
+    const isTodayToggle = useSelector(todayToggleSelector)
+    const isFiveDaysToggle = useSelector(fiveDaysToggleSelector)
 
     return (
         <div>
-            {isCurrentDateToggler && <CurrentWeather/>}
+            {isTodayToggle && <CurrentWeather/>}
             <DaysButtons/>
-            {isCurrentDateToggler && <CurrentDate/>}
-            {isFiveDaysToggler && <FiveDaysWeather/>}
+            {isTodayToggle && <CurrentDate/>}
+            {isFiveDaysToggle && <FiveDaysWeather/>}
         </div>
     );
 };
