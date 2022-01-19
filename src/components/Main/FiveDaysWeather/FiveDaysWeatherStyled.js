@@ -21,6 +21,9 @@ export const FiveDaysWeatherWrapper = styled.div`
     background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
     border-radius: 34px;
+    @media (min-width: 768px) {
+      width: 620px;
+    }
   }
 
   .titleLocation {
@@ -28,7 +31,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
     color: #FFFFFF;
   }
 
@@ -40,18 +43,21 @@ export const FiveDaysWeatherWrapper = styled.div`
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
-
     ::-webkit-scrollbar {
       width: 0px;
       height: 3px;
       border-radius: 4px;
       background-color: rgba(255, 255, 255, 0.15);
     }
-
     ::-webkit-scrollbar-thumb {
       background-color: #FF6B09;
       border-radius: 4px;
       height: 5px;
+    }
+    @media (min-width: 768px) {
+      width: 550px;
+      overflow: visible;
+      justify-content: space-around;
     }
   }
 
@@ -68,10 +74,15 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.16;
     letter-spacing: 0.04em;
     color: #FFFFFF;
     opacity: 0.55;
+    @media (min-width: 768px) {
+      font-size: 18px;
+      line-height: 1.2;
+      text-align: center;
+    }
 
   }
 
@@ -80,9 +91,14 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 1.2;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    @media (min-width: 768px) {
+      font-size: 18px;
+      line-height: 1.2;
+      text-align: center;
+    }
   }
 
   .icon {
@@ -113,16 +129,26 @@ export const FiveDaysWeatherWrapper = styled.div`
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
-      line-height: 17px;
+      line-height: 1.2;
       color: #767D85;
+      @media (min-width: 768px) {
+        margin: 0 5px;
+        font-size: 14px;
+        line-height: 1.2;
+      }
     }
 
     .tempNum {
       font-style: normal;
       font-weight: normal;
       font-size: 16px;
-      line-height: 19px;
+      line-height: 1.2;
       color: #FF6B09;
+      @media (min-width: 768px) {
+        margin: 0 5px;
+        font-size: 18px;
+        line-height: 1.2;
+      }
     }
   }
 
@@ -133,7 +159,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.16;
     text-align: center;
     text-decoration-line: underline;
     color: #FFFFFF;
@@ -141,6 +167,13 @@ export const FiveDaysWeatherWrapper = styled.div`
 
     :hover {
       opacity: 1;
+    }
+    
+    @media (min-width: 768px) {
+      margin-top: 5px;
+      font-size: 14px;
+      line-height: 1.2;
+      align-items: center;
     }
   }
 
@@ -165,6 +198,11 @@ export const FiveDaysWeatherWrapper = styled.div`
       border-radius: 4px;
       height: 5px;
     }
+    
+    @media (min-width: 768px) {
+      width: 550px;
+    }
+    
   }
 
   .hourlyForecastItem {
@@ -186,15 +224,16 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 1.2;
     display: flex;
     color: #FFFFFF;
-
     opacity: 0.54;
-  }
-
-  .icon {
-
+    
+    @media(min-width: 768px) {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   .currentFeelsTempList {
@@ -213,7 +252,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 1.2;
     color: #767D85;
     margin-bottom: 4px;
   }
@@ -222,7 +261,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 19px;
+    line-height: 1;
     color: #FF6B09;
   }
 }
@@ -243,7 +282,7 @@ export const FiveDaysWeatherWrapper = styled.div`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 1.2;
   display: flex;
   align-items: center;
   color: #FFFFFF;
