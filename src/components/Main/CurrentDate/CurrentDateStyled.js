@@ -4,7 +4,7 @@ export const CurrentDateWrapper = styled.div`
   .favoriteBox {
     display: flex;
     align-items: center;
-    margin: 35px auto;
+    margin: 35px auto 0;
     width: 280px;
     height: 190px;
     background: rgba(16, 33, 54, 0.8);
