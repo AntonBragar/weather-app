@@ -51,11 +51,11 @@ export const CurrentWeatherWrapper = styled.div`
 
   .location {
     font-size: 16px;
-    line-height: 19px;
+    line-height: 1.18;
     color: #767D85;
     @media (min-width: 768px) {
       font-size: 18px;
-      line-height: 22px;
+      line-height: 1.2;
     }
   }
 
@@ -76,14 +76,14 @@ export const CurrentWeatherWrapper = styled.div`
     font-style: normal;
     font-weight: 300;
     font-size: 45px;
-    line-height: 54px;
+    line-height: 1.2;
     letter-spacing: 0.04em;
     color: #FFFFFF;
     @media (min-width: 768px) {
       margin-right: 0;
       font-weight: 300;
       font-size: 90px;
-      line-height: 108px;
+      line-height: 1.2;
     }
   }
 
@@ -120,7 +120,7 @@ export const CurrentWeatherWrapper = styled.div`
     color: #767D85;
     @media (min-width: 768px) {
       font-size: 18px;
-      line-height: 22px;
+      line-height: 1.2;
     }
   }
 
@@ -132,7 +132,7 @@ export const CurrentWeatherWrapper = styled.div`
     color: #FFFFFF;
     @media (min-width: 768px) {
       font-size: 18px;
-      line-height: 22px;
+      line-height: 1.18;
     }
   }
 `
