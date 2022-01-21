@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CurrentDateWrapper = styled.div`
     display: flex;
     align-items: center;
-    margin: 35px auto 0;
+    margin: 35px 0 0;
     width: 280px;
     height: 190px;
     background: rgba(16, 33, 54, 0.8);

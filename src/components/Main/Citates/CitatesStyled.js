@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const CitatesWrapper = styled.div`
-  margin: 0 auto;
-  padding: 30px 0;
+  margin: 30px 0;
   width: 280px;
   height: fit-content;
   @media (min-width: 768px) {

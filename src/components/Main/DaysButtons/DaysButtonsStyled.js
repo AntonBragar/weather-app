@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DaysButtonsWrapper = styled.div`
-    margin: 35px auto;
+    margin: 35px 0 0;
     width: 280px;
     display: flex;
     justify-content: space-between;
