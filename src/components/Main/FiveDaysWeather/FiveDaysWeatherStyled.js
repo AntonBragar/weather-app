@@ -12,7 +12,7 @@ export const WeatherImageContainer = styled.div`
 `
 
 export const FiveDaysWeatherWrapper = styled.div`
-    margin: 35px auto;
+    margin: 35px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;

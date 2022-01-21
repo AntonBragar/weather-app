@@ -12,7 +12,7 @@ export const WeatherImageContainer = styled.div`
 `
 
 export const CurrentWeatherWrapper = styled.div`
-    margin: 35px auto;
+    margin: 35px 0 0;
     width: 280px;
     height: 190px;
     background: #102136;
