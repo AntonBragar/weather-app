@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const FavoriteWrapper = styled.div`
-
-  .favoriteBox {
     display: flex;
     margin: 15px auto 0;
     width: 280px;
@@ -17,8 +15,7 @@ export const FavoriteWrapper = styled.div`
     @media (min-width: 1280px) {
       width: 520px;
     }
-  }
-
+  
   .citiesList {
     display: flex;
     overflow: scroll;

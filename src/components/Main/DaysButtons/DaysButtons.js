@@ -22,11 +22,9 @@ const DaysButtons = () => {
 
 
     return (
-        <DaysButtonsWrapper className="container">
-            <div className="buttonsBox">
+        <DaysButtonsWrapper className="">
                 <button className={`${classNames(isTodayToggle ? "active" : "")} button`} id="today" onClick={onClickHandler}>today</button>
                 <button className={`${classNames(isFiveDaysToggle ? "active" : "")} button`} id="fiveDays" onClick={onClickHandler}>5 days</button>
-            </div>
         </DaysButtonsWrapper>
     );
 };

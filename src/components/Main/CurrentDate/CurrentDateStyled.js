@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const CurrentDateWrapper = styled.div`
-  .favoriteBox {
     display: flex;
     align-items: center;
     margin: 35px auto 0;
@@ -13,7 +12,6 @@ export const CurrentDateWrapper = styled.div`
       width: 500px;
       height: 300px;
     }
-  }
 
   .itemsBox {
     margin: 0 auto;

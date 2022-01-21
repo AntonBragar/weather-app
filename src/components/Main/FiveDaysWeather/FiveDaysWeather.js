@@ -96,12 +96,10 @@ const FiveDaysWeather = () => {
     }
 
     return (
-        <FiveDaysWeatherWrapper className="container">
-            <div className="weatherBox">
+        <FiveDaysWeatherWrapper className="">
                 <p className="titleLocation">{state?.name},{state?.country}</p>
                 <DailyList daily={state?.daily} onHandlerClickMoreInfo={onHandlerClickMoreInfo}/>
                 {state?.filteredHourlyWeather && <HourlyList hourly={state?.filteredHourlyWeather}/>}
-            </div>
         </FiveDaysWeatherWrapper>
     );
 };

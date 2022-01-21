@@ -3,9 +3,9 @@ import Citates from "./Citates/Citates";
 
 const Footer = () => {
     return (
-        <div>
+        <>
             <Citates/>
-        </div>
+        </>
     );
 };
 

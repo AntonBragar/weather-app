@@ -7,6 +7,7 @@ export const AppWrapper = styled.div`
     padding: 0 30px;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   @media screen and (max-width: 424px) {

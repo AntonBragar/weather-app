@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const DaysButtonsWrapper = styled.div`
-  .buttonsBox{
-    margin-top: 35px;
+    margin: 35px auto;
     width: 280px;
     display: flex;
     justify-content: space-between;
-  }
+
   .button {
     border: none;
     display: flex;

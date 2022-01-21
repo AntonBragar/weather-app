@@ -12,8 +12,7 @@ export const WeatherImageContainer = styled.div`
 `
 
 export const CurrentWeatherWrapper = styled.div`
-  .favoriteBox {
-    margin-top: 35px;
+    margin: 35px auto;
     width: 280px;
     height: 190px;
     background: #102136;
@@ -23,7 +22,6 @@ export const CurrentWeatherWrapper = styled.div`
       width: 500px;
       height: 300px;
     }
-  }
 
   .itemsBox {
     width: 170px;

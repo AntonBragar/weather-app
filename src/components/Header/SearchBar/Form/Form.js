@@ -42,8 +42,7 @@ const Form = () => {
     }
 
     return (
-        <FormWrapper className='container'>
-            <div className='inputBox'>
+        <FormWrapper className=''>
                 <div className='inputForm'>
                     <button className='target' onClick={onHandlerGetLocation}>
                         <svg width={22} height={22} className="targetSvg">
@@ -60,7 +59,6 @@ const Form = () => {
                         </svg>
                     </button>
                 </div>
-            </div>
         </FormWrapper>
     );
 };

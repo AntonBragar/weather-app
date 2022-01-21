@@ -49,9 +49,7 @@ const CurrentDate = () => {
     }, [dt, sunrise, sunset, timezone])
 
     return (
-        <div>
-            <CurrentDateWrapper className="container">
-                <div className="favoriteBox">
+            <CurrentDateWrapper className="">
                     <div className="itemsBox">
                         <div className="dateAndDay">
                             <p className="date">{state.thisDay}<sup className="degree">th</sup></p>
@@ -76,9 +74,7 @@ const CurrentDate = () => {
                             </p>
                         </div>
                     </div>
-                </div>
             </CurrentDateWrapper>
-        </div>
     );
 };
 
