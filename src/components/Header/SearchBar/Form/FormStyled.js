@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.div`
-
-  .inputBox {
-    margin: 30px auto 0;
+    margin: 0 auto;
     position: relative;
-    min-width: 280px;
+    width: 280px;
     height: 48px;
     @media (min-width: 768px) {
       width: 500px;
@@ -13,8 +11,6 @@ export const FormWrapper = styled.div`
     @media (min-width: 1280px) {
       width: 520px;
     }
-  }
-
   .inputForm {
     width: inherit;
     height: 48px;

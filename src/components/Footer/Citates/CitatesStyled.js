@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 export const CitatesWrapper = styled.div`
-  
-  .quotes {
-    padding: 30px 0;
-    width: 280px;
-    height: fit-content;
-    @media (min-width: 768px) {
-      width: 400px;
-    }
+  margin: 0 auto;
+  padding: 30px 0;
+  width: 280px;
+  height: fit-content;
+  @media (min-width: 768px) {
+    width: 400px;
   }
-  
+
   .quote {
     display: flex;
     font-style: italic;
@@ -26,7 +24,7 @@ export const CitatesWrapper = styled.div`
       line-height: 26px;
     }
   }
-  
+
   .author {
     font-style: normal;
     font-weight: normal;
@@ -34,7 +32,7 @@ export const CitatesWrapper = styled.div`
     line-height: 1.2;
     text-align: right;
     letter-spacing: 0.04em;
-    color: #FFFFFF; 
+    color: #FFFFFF;
     padding-top: 10px;
   }
 `

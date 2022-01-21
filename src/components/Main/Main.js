@@ -11,12 +11,12 @@ const Main = () => {
     const isFiveDaysToggle = useSelector(fiveDaysToggleSelector)
 
     return (
-        <div>
+        <>
             {isTodayToggle && <CurrentWeather/>}
             <DaysButtons/>
             {isTodayToggle && <CurrentDate/>}
             {isFiveDaysToggle && <FiveDaysWeather/>}
-        </div>
+        </>
     );
 };
 

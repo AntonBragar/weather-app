@@ -23,13 +23,11 @@ const Citates = () => {
     }, [quote])
 
     return (
-        <CitatesWrapper className="container">
-            <div className="quotes">
-                <p className="quote">
-                    {quote?.text}
-                </p>
-                <p className="author">{quote?.author}</p>
-            </div>
+        <CitatesWrapper className="">
+            <p className="quote">
+                {quote?.text}
+            </p>
+            <p className="author">{quote?.author}</p>
         </CitatesWrapper>
     );
 };

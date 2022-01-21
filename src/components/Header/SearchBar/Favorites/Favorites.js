@@ -16,8 +16,7 @@ const Favorites = () => {
     }
 
      return favoriteCities.length ?(
-        <FavoriteWrapper className="container">
-            <div className="favoriteBox">
+        <FavoriteWrapper className="">
                 <ul className='citiesList'>
                     {favoriteCities?.map(({city, id}) => (
                         <li key={id} className="cityItem"><span className='cityTitle'>{city}</span>
@@ -34,7 +33,6 @@ const Favorites = () => {
                         <use xlinkHref={sprite + "#icon-arrow-right"}/>
                     </svg>
                 </button>
-            </div>
         </FavoriteWrapper>
     ):null;
 };
