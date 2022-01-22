@@ -1,27 +1,40 @@
 import styled from "styled-components";
 
 export const CurrentDateWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 35px 0 0;
-    width: 280px;
-    height: 190px;
-    background: rgba(16, 33, 54, 0.8);
-    border-radius: 34px;
-    @media (min-width: 768px) {
-      width: 500px;
-      height: 300px;
-    }
+  display: flex;
+  align-items: center;
+  margin: 35px 0 0;
+  width: 280px;
+  height: 190px;
+  background: rgba(16, 33, 54, 0.8);
+  border-radius: 34px;
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 300px;
+  }
+  @media (min-width: 1280px) {
+    margin: auto 0 0;
+    width: 630px;
+    height: 278px;
+    border-radius: 0 34px 0 0; 
+  }
 
   .itemsBox {
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: inherit;
     @media (min-width: 768px) {
       height: 220px;
       justify-content: space-around;
+    }
+    @media (min-width: 1280px) {
+      align-items: start;
+      width: 433px;
+      height: 140px;
+      margin-left: 100px;
     }
   }
 
@@ -76,8 +89,24 @@ export const CurrentDateWrapper = styled.div`
     }
   }
 
+  .contentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 1280px) {
+      flex-direction: row;
+    }
+  }
+
   .monthAndTime {
     display: flex;
+    margin-top: 15px;
+    @media (min-width: 768px) {
+      margin: 25px 0;
+    }
+    @media (min-width: 1280px) {
+      margin: 0;
+    }
   }
 
   .month {
@@ -123,6 +152,9 @@ export const CurrentDateWrapper = styled.div`
     margin-top: 15px;
     @media (min-width: 768px) {
       margin-top: 0;
+    }
+    @media (min-width: 1280px) {
+      margin-left: 40px;
     }
   }
 

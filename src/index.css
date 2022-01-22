@@ -46,19 +46,22 @@ a {
 body {
     font-family: 'Lato', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    position: relative;
+}
+#root{
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
-
 @media (min-width: 768px) {
-    body {
+    #root {
+        width: 100vw;
         height: fit-content;
     }
 }
-/*@media (min-width: 1024px) {*/
-/*    body {*/
-/*        height: fit-content;*/
-/*    }*/
-/*}*/
+@media (min-width: 1280px) {
+    #root {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+

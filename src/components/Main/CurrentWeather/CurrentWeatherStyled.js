@@ -12,16 +12,18 @@ export const WeatherImageContainer = styled.div`
 `
 
 export const CurrentWeatherWrapper = styled.div`
-    margin: 35px 0 0;
-    width: 280px;
-    height: 190px;
-    background: #102136;
-    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px;
-    @media (min-width: 768px) {
-      width: 500px;
-      height: 300px;
-    }
+  width: 280px;
+  height: 190px;
+  background: #102136;
+  box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 278px;
+  }
+  @media (min-width: 1280px) {
+    border-radius: 34px 0 0 34px;
+  }
 
   .itemsBox {
     width: 170px;

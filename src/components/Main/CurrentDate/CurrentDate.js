@@ -55,24 +55,27 @@ const CurrentDate = () => {
                             <p className="date">{state.thisDay}<sup className="degree">th</sup></p>
                             <p className="day">{state.weekDay}</p>
                         </div>
-                        <div className="monthAndTime">
-                            <p className="month">{state.month}</p>
-                            <Clock/>
+                        <div className='contentBox'>
+                            <div className="monthAndTime">
+                                <p className="month">{state.month}</p>
+                                <Clock/>
+                            </div>
+                            <div className="sunShine">
+                                <p className="sunrise">
+                                    <svg width={22} height={22} className="icon">
+                                        <use xlinkHref={sprite + "#icon-sunrise"}/>
+                                    </svg>
+                                    {state.sunrise}
+                                </p>
+                                <p className="sunset">
+                                    <svg width={22} height={22} className="icon">
+                                        <use xlinkHref={sprite + "#icon-sunset"}/>
+                                    </svg>
+                                    {state.sunset}
+                                </p>
+                            </div>
                         </div>
-                        <div className="sunShine">
-                            <p className="sunrise">
-                                <svg width={22} height={22} className="icon">
-                                    <use xlinkHref={sprite + "#icon-sunrise"}/>
-                                </svg>
-                                {state.sunrise}
-                            </p>
-                            <p className="sunset">
-                                <svg width={22} height={22} className="icon">
-                                    <use xlinkHref={sprite + "#icon-sunset"}/>
-                                </svg>
-                                {state.sunset}
-                            </p>
-                        </div>
+
                     </div>
             </CurrentDateWrapper>
     );
