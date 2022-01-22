@@ -14,11 +14,18 @@ const Main = () => {
 
     return (
         <MainWrapper>
-            {isTodayToggle && <CurrentWeather/>}
-            <DaysButtons/>
-            {isTodayToggle && <CurrentDate/>}
-            {isFiveDaysToggle && <FiveDaysWeather/>}
-            {isTodayToggle &&<Citates/>}
+            {isTodayToggle && <div className="firstBlock">
+                <CurrentWeather/>
+                <DaysButtons/>
+            </div>}
+            {isTodayToggle && <div className="secondBlock">
+                <CurrentDate/>}
+                <Citates/>}
+            </div>}
+            {isFiveDaysToggle && <div className="thirdBlock">
+                <DaysButtons/>
+                <FiveDaysWeather/>
+            </div>}
         </MainWrapper>
     );
 };
