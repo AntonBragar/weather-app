@@ -19,8 +19,8 @@ const Main = () => {
                 <DaysButtons/>
             </div>}
             {isTodayToggle && <div className="secondBlock">
-                <CurrentDate/>}
-                <Citates/>}
+                <CurrentDate/>
+                <Citates/>
             </div>}
             {isFiveDaysToggle && <div className="thirdBlock">
                 <DaysButtons/>

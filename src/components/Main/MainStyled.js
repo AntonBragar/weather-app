@@ -16,9 +16,12 @@ export const MainWrapper = styled.div`
   .thirdBlock {
     margin: 0 auto;
   }
-
+  @media (min-width: 768px) {
+    .thirdBlock {
+      height: 100vh;
+    }
+  }
   @media (min-width: 1280px) {
-
     .firstBlock {
       margin: 0;
       align-self: end;
@@ -29,5 +32,6 @@ export const MainWrapper = styled.div`
       display: flex;
       justify-content: space-between;
     }
+
   }
 `
