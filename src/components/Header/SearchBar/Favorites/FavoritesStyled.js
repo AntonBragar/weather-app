@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 export const FavoriteWrapper = styled.div`
-    display: flex;
-    margin: 15px auto 0;
-    width: 280px;
-    align-items: center;
-    justify-content: center;
-    @media (min-width: 768px) {
-      width: 500px;
-    }
-    @media (min-width: 768px) {
-      width: 500px;
-    }
-    @media (min-width: 1280px) {
-      width: 520px;
-    }
-  
+  display: flex;
+  margin: 15px auto 0;
+  width: 280px;
+  align-items: center;
+  justify-content: space-between;
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+  @media (min-width: 1280px) {
+    width: 520px;
+  }
+
   .citiesList {
     display: flex;
     overflow: scroll;
@@ -47,9 +47,9 @@ export const FavoriteWrapper = styled.div`
     color: #FFFFFF;
     border-radius: 20px;
     margin: 5px;
-    
+
   }
-  
+
 
   .cityTitle {
     padding: 0px 10px;
@@ -65,17 +65,9 @@ export const FavoriteWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    svg{
+
+    svg {
       margin: 2px;
     }
-  }
-
-  .rightArrow {
-    margin-left: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    border: none;
-    height: 38px;
-    width: 38px;
   }
 `
