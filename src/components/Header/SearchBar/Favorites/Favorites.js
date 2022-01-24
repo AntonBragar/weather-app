@@ -1,40 +1,27 @@
 import {FavoriteWrapper} from "./FavoritesStyled";
-import sprite from "../../../../img/symbol-defs.svg";
-import {useDispatch, useSelector} from "react-redux";
 import {getFavoritesSelector} from "../../../../redux/favorites/favoritesSelectors";
-import {deleteFavorite} from "../../../../redux/favorites/favoritesActions";
-
+import FavoriteItems from "./FavoriteItems";
+import {useSelector} from "react-redux";
+import {useRef} from "react";
+import ButtonScroll from "../../../../utils/ButtonScroll/ButtonScroll";
 
 const Favorites = () => {
-    let favoriteCities = useSelector(getFavoritesSelector)
+    const favoriteCities = useSelector(getFavoritesSelector)
 
-    const dispatch = useDispatch()
+    const ulCitiesRef = useRef();
 
-    const deleteCity = (evt) => {
-        const {id} = evt.target;
-        dispatch(deleteFavorite(id))
-    }
 
-     return favoriteCities.length ?(
+    return favoriteCities.length ? (
         <FavoriteWrapper className="">
-                <ul className='citiesList'>
-                    {favoriteCities?.map(({city, id}) => (
-                        <li key={id} className="cityItem"><span className='cityTitle'>{city}</span>
-                            <button className="deleteItem" id={id} onClick={deleteCity}>
-                                <svg id={id} width={10} height={10} >
-                                    <use xlinkHref={sprite + "#icon-close"}/>
-                                </svg>
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-                <button className='rightArrow'>
-                    <svg width={22} height={22} className="phone">
-                        <use xlinkHref={sprite + "#icon-arrow-right"}/>
-                    </svg>
-                </button>
+            <ButtonScroll direction={'left'}  ulWithScrollRef={ulCitiesRef} scrollLength={150}/>
+            <ul ref={ulCitiesRef} className='citiesList'>
+                {favoriteCities?.map(({city, id}) => (
+                    <FavoriteItems city={city} id={id} key={id}/>
+                ))}
+            </ul>
+            <ButtonScroll direction={'right'}  ulWithScrollRef={ulCitiesRef} scrollLength={150}/>
         </FavoriteWrapper>
-    ):null;
+    ) : null;
 };
 
 export default Favorites;
