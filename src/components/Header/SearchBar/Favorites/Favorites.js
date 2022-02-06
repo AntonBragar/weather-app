@@ -10,9 +10,8 @@ const Favorites = () => {
 
     const ulCitiesRef = useRef();
 
-
     return favoriteCities.length ? (
-        <FavoriteWrapper className="">
+        <FavoriteWrapper>
             <ButtonScroll direction={'left'}  ulWithScrollRef={ulCitiesRef} scrollLength={150}/>
             <ul ref={ulCitiesRef} className='citiesList'>
                 {favoriteCities?.map(({city, id}) => (
