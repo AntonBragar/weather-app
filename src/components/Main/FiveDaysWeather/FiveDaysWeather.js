@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {FiveDaysWeatherWrapper} from "./FiveDaysWeatherStyled";
 import {useSelector} from "react-redux";
 import {
@@ -10,6 +10,7 @@ import {getSearchCoordSelector} from "../../../redux/coords/coordSelectors";
 import DailyList from "./DailyForecast/DailyList";
 import HourlyList from "./HourlyForecast/HourlyList";
 import {format, utcToZonedTime} from "date-fns-tz";
+import ButtonScroll from "../../../utils/ButtonScroll/ButtonScroll";
 
 
 const FiveDaysWeather = () => {
@@ -19,6 +20,7 @@ const FiveDaysWeather = () => {
     const {name, country} = useSelector(getSearchCoordSelector);
 
     const [state, setState] = useState()
+
 
     useEffect(() => {
         if (dailySelector && hourlySelector && name && country) {

@@ -1,4 +1,3 @@
-
 import sprite from "../../img/symbol-defs.svg";
 import {ButtonScrollWrapper} from "./ButtonScrollStyled";
 import {makeScroll} from "./makeScroll";

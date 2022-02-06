@@ -12,17 +12,20 @@ export const WeatherImageContainer = styled.div`
 `
 
 export const FiveDaysWeatherWrapper = styled.div`
-    margin: 35px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 280px;
-    background: rgba(16, 33, 54, 0.8);
-    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px;
-    @media (min-width: 768px) {
-      width: 620px;
-    }
+  margin: 35px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  background: rgba(16, 33, 54, 0.8);
+  box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+  @media (min-width: 768px) {
+    width: 620px;
+  }
+  @media (min-width: 1280px) {
+    width: 1060px;
+  }
 
   .titleLocation {
     margin-top: 30px;
@@ -41,21 +44,28 @@ export const FiveDaysWeatherWrapper = styled.div`
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
+
     ::-webkit-scrollbar {
       width: 0px;
       height: 3px;
       border-radius: 4px;
       background-color: rgba(255, 255, 255, 0.15);
     }
+
     ::-webkit-scrollbar-thumb {
       background-color: #FF6B09;
       border-radius: 4px;
       height: 5px;
     }
+
     @media (min-width: 768px) {
       width: 550px;
       overflow: visible;
       justify-content: space-around;
+    }
+
+    @media (min-width: 1280px) {
+      width: 800px;
     }
   }
 
@@ -81,7 +91,6 @@ export const FiveDaysWeatherWrapper = styled.div`
       line-height: 1.2;
       text-align: center;
     }
-
   }
 
   .date {
@@ -95,6 +104,11 @@ export const FiveDaysWeatherWrapper = styled.div`
     @media (min-width: 768px) {
       font-size: 18px;
       line-height: 1.2;
+      text-align: center;
+    }
+    @media (min-width: 1280px) {
+      font-size: 25px;
+      line-height: 1.6;
       text-align: center;
     }
   }
@@ -112,6 +126,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     .tempItem {
       display: flex;
       flex-direction: column;
+      align-items: center;
 
       :first-child {
         padding-right: 5px;
@@ -134,6 +149,11 @@ export const FiveDaysWeatherWrapper = styled.div`
         font-size: 14px;
         line-height: 1.2;
       }
+      @media (min-width: 1280px) {
+        font-size: 18px;
+        line-height: 1.2;
+        margin: 0 10px;
+      }
     }
 
     .tempNum {
@@ -146,6 +166,10 @@ export const FiveDaysWeatherWrapper = styled.div`
         margin: 0 5px;
         font-size: 18px;
         line-height: 1.2;
+      }
+      @media (min-width: 1280px) {
+        font-size: 25px;
+        line-height: 1.6;
       }
     }
   }
@@ -175,6 +199,16 @@ export const FiveDaysWeatherWrapper = styled.div`
     }
   }
 
+  .hourlyForecastWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    @media (min-width: 1280px) {
+      width: 950px;
+    }
+  }
+
   .hourlyForecastsList {
     width: 260px;
     overflow: scroll;
@@ -196,11 +230,15 @@ export const FiveDaysWeatherWrapper = styled.div`
       border-radius: 4px;
       height: 5px;
     }
-    
+
     @media (min-width: 768px) {
       width: 550px;
     }
     
+    @media (min-width: 1280px) {
+      width: 830px;
+      margin-left: 15px;
+    }
   }
 
   .hourlyForecastItem {
@@ -226,8 +264,8 @@ export const FiveDaysWeatherWrapper = styled.div`
     display: flex;
     color: #FFFFFF;
     opacity: 0.54;
-    
-    @media(min-width: 768px) {
+
+    @media (min-width: 768px) {
       display: flex;
       align-items: center;
       text-align: center;
@@ -239,6 +277,7 @@ export const FiveDaysWeatherWrapper = styled.div`
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
+
     .tempItem {
       display: flex;
       flex-direction: column;
@@ -261,6 +300,11 @@ export const FiveDaysWeatherWrapper = styled.div`
     font-size: 18px;
     line-height: 1;
     color: #FF6B09;
+    
+    @media (min-width: 1280px) {
+      font-size: 25px;
+      line-height: 1.6;
+    }
   }
 }
 

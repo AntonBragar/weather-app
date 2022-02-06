@@ -18,10 +18,12 @@ export const ButtonScrollWrapper = styled.button`
     width: 32px;
     position: absolute;
     z-index: -2;
+    fill: #ff6700;
   }
 
   @media (min-width: 1280px) {
     display: block;
+
   }
 
 `
